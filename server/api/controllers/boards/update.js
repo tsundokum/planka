@@ -110,6 +110,12 @@ module.exports = {
       isNotEmptyString: true,
       maxLength: 128,
     },
+    externalRef: {
+      type: 'string',
+      isNotEmptyString: true,
+      maxLength: 256,
+      allowNull: true,
+    },
     defaultView: {
       type: 'string',
       isIn: Object.values(Board.Views),
@@ -163,6 +169,7 @@ module.exports = {
       availableInputKeys.push(
         'position',
         'name',
+        'externalRef',
         'defaultView',
         'defaultCardType',
         'limitCardTypesToDefaultOne',
@@ -182,6 +189,7 @@ module.exports = {
     const values = _.pick(inputs, [
       'position',
       'name',
+      'externalRef',
       'defaultView',
       'defaultCardType',
       'limitCardTypesToDefaultOne',

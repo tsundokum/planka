@@ -134,6 +134,12 @@ module.exports = {
       type: 'string',
       required: true,
     },
+    externalSlug: {
+      type: 'string',
+      isNotEmptyString: true,
+      allowNull: true,
+      columnName: 'external_slug',
+    },
     description: {
       type: 'string',
       isNotEmptyString: true,

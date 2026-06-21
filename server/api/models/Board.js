@@ -121,6 +121,12 @@ module.exports = {
       type: 'string',
       required: true,
     },
+    externalRef: {
+      type: 'string',
+      isNotEmptyString: true,
+      allowNull: true,
+      columnName: 'external_ref',
+    },
     defaultView: {
       type: 'string',
       isIn: Object.values(Views),

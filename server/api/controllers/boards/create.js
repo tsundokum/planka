@@ -135,6 +135,12 @@ module.exports = {
       maxLength: 128,
       required: true,
     },
+    externalRef: {
+      type: 'string',
+      isNotEmptyString: true,
+      maxLength: 256,
+      allowNull: true,
+    },
     importType: {
       type: 'string',
       isIn: Object.values(Board.ImportTypes),
@@ -203,7 +209,7 @@ module.exports = {
       }
     }
 
-    const values = _.pick(inputs, ['position', 'name']);
+    const values = _.pick(inputs, ['position', 'name', 'externalRef']);
 
     const { board, boardMembership } = await sails.helpers.boards.createOne.with({
       values: {

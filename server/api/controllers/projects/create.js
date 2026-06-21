@@ -85,12 +85,18 @@ module.exports = {
       maxLength: 1024,
       allowNull: true,
     },
+    externalSlug: {
+      type: 'string',
+      isNotEmptyString: true,
+      maxLength: 256,
+      allowNull: true,
+    },
   },
 
   async fn(inputs) {
     const { currentUser } = this.req;
 
-    const values = _.pick(inputs, ['type', 'name', 'description']);
+    const values = _.pick(inputs, ['type', 'name', 'description', 'externalSlug']);
 
     const { project, projectManager } = await sails.helpers.projects.createOne.with({
       values,

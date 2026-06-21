@@ -148,6 +148,12 @@ module.exports = {
       maxLength: 1024,
       allowNull: true,
     },
+    externalSlug: {
+      type: 'string',
+      isNotEmptyString: true,
+      maxLength: 256,
+      allowNull: true,
+    },
     backgroundType: {
       type: 'string',
       isIn: Object.values(Project.BackgroundTypes),
@@ -229,6 +235,7 @@ module.exports = {
         'description',
         'backgroundType',
         'backgroundGradient',
+        'externalSlug',
       );
     }
 
@@ -283,6 +290,7 @@ module.exports = {
       'backgroundImageId',
       'name',
       'description',
+      'externalSlug',
       'backgroundType',
       'backgroundGradient',
       'isHidden',
