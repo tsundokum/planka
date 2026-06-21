@@ -1,4 +1,4 @@
-name: Build and Push PySymphony Docker Image
+name: Build and Push External ID Docker Image
 
 on:
   workflow_dispatch:
@@ -8,7 +8,7 @@ permissions:
   packages: write
 
 jobs:
-  build-and-push-pysymphony-image:
+  build-and-push-external-id-image:
     runs-on: ubuntu-latest
 
     steps:
@@ -59,8 +59,8 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            ghcr.io/tsundokum/planka:pysymphony-2.1.1-external-ref-v1
-            ghcr.io/tsundokum/planka:pysymphony-latest
+            ghcr.io/tsundokum/planka:2.1.1-external-id-v1
+            ghcr.io/tsundokum/planka:external-id-latest
           labels: |
             org.opencontainers.image.licenses=Fair Use License
             org.opencontainers.image.url=https://planka.app
